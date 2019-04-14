@@ -4,7 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run features && npm run specs",
+    "features": "superstatic -p 8080 & mocha --timeout 100000 --recursive  --reporter=spec features ; PORT=8080 npm run stop-test-server ",
+    "specs": "mocha --recursive  --reporter=spec spec",
+    "server": "superstatic src -p 3000",
+    "stop-test-server": "lsof -ti tcp:$PORT | xargs kill"
+  },
+  "bin": {
+    "training-wheels:generate": "node ./node_modules/e2e_training_wheels/dist/generators.js",
+    "training-wheels:install": "node ./node_modules/e2e_training_wheels/dist/install.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/stefankarlberg/fizzbuzz_js_stefankarlberg1/issues"
   },
-  "homepage": "https://github.com/stefankarlberg/fizzbuzz_js_stefankarlberg1#readme"
+  "homepage": "https://github.com/stefankarlberg/fizzbuzz_js_stefankarlberg1#readme",
+  "devDependencies": {
+    "e2e_training_wheels": "0.0.36"
+  }
 }
