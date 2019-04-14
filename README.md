@@ -115,3 +115,11 @@ expect(fizzBuzz.check(15)).to.eql('FizzBuzz')
 ---
 
 
+
+## Question 9
+
+**Please explain what a CDN (Content Delivery Network) is?**
+
+**Answer:** Cloud-based services that deliver pages and other Web contents to users all over the world.
+
+---
