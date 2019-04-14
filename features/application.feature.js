@@ -23,5 +23,15 @@ context('User can input a value and get FizzBuzz results', () => {
     await browser.clickOnButton("input[value='Check']")
     let content = await browser.getContent("[id='display_answer']")
     expect(content).to.eql('Fizz');
-})
+  })
+
+  // Checking if input is not a valid number between 1-100
+  it('clicking on the "Check" button', async () => {
+    await browser.fillIn("input[id='value']", { with:  "134" })
+    await browser.clickOnButton("input[value='Check']")
+    let content = await browser.getContent("[id='display_answer']")
+    expect(content).to.eql('Man, how hard can it be to read the instructions!');
+  })
+
+
 });
