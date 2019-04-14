@@ -26,3 +26,15 @@ eval( fizzBuzz + `\nexports.FizzBuzz = FizzBuzz;`)
 
 
 ---
+
+
+## Question 3
+
+**Please explain the difference between using === and == in JS?**
+
+ **Answer:** === Tripple equal are used to test for strict equality. Type and value have to absolulutely the same. == Double equal are more loose, a value can equals even if the types (int, string) are different.
+
+
+
+---
+
